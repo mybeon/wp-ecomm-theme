@@ -8,7 +8,6 @@ $attrs = $product->get_attribute("pa_size");
             <img class="card-img rounded-0 img-fluid" src="<?php the_post_thumbnail_url("large"); ?>">
             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                 <ul class="list-unstyled">
-                    <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
                     <li><a class="btn btn-success text-white mt-2" href="<?php the_permalink() ?>"><i class="far fa-eye"></i></a></li>
                     <li class="try_flex"><?php woocommerce_template_loop_add_to_cart(get_the_ID(), $product) ?>
                     </li>

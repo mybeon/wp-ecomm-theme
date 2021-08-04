@@ -724,6 +724,9 @@ table.order_details {
 .shop_table_responsive {
   width: 50%;
   border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 4px 4px 35px rgba(0, 0, 0, 0.089);
 }
 
 .shop_table_responsive td,
@@ -731,8 +734,34 @@ table.order_details {
   padding: 1rem;
 }
 
+.shop_table_responsive th,
+.shop_table_responsive thead {
+  background: rgba(105, 187, 126, 1);
+  color: white;
+}
+
 table.shop_table {
   width: 1000px;
+}
+
+.cart-collaterals {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.wrap_totals {
+  gap: unset;
+  width: 100%;
+  justify-content: center;
+}
+
+.cart_totals h2 {
+  width: unset;
+}
+
+.wc-proceed-to-checkout,
+.flex_table {
+  width: 50%;
 }
 
 @media only screen and (max-width: 920px) {
