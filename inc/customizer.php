@@ -66,23 +66,6 @@ function ecomm_slider_customizer($wp_customize) {
         $wp_customize->add_setting('slider_'. $slide .'_background_img', array(
             'sanitize_callback' => 'ecomm_sanitize_img'
         ));
-
-        function ecomm_sanitize_img( $input ){
- 
-            /* default output */
-            $output = '';
-         
-            /* check file type */
-            $filetype = wp_check_filetype( $input );
-            $mime_type = $filetype['type'];
-         
-            /* only mime type "image" allowed */
-            if ( strpos( $mime_type, 'image' ) !== false ){
-                $output = $input;
-            }
-         
-            return $output;
-        }
         
         
         $wp_customize->add_control( new WP_Customize_Cropped_Image_Control($wp_customize, 'slider_'. $slide .'_background_img_control',array(
@@ -92,5 +75,22 @@ function ecomm_slider_customizer($wp_customize) {
             'width' => 400,
             'height' => 400
         )));
+    }
+
+    function ecomm_sanitize_img( $input ){
+ 
+        /* default output */
+        $output = '';
+     
+        /* check file type */
+        $filetype = wp_check_filetype( $input );
+        $mime_type = $filetype['type'];
+     
+        /* only mime type "image" allowed */
+        if ( strpos( $mime_type, 'image' ) !== false ){
+            $output = $input;
+        }
+     
+        return $output;
     }
 }
